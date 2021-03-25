@@ -1,21 +1,22 @@
+/* eslint-disable react-native/no-inline-styles */
 import 'react-native-gesture-handler';
-
-// In App.js in a new project
-
-// import * as React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, Button} from 'react-native';
 // import {NavigationContainer} from '@react-navigation/native';
-// export default App;
-import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import {createStackNavigator} from '@react-navigation/stack';
+import {useIsFocused} from '@react-navigation/native';
 
 function HomeScreen0(props) {
+  const isFocused = useIsFocused();
+  useEffect(() => {
+    console.log(isFocused);
+  }, [isFocused]);
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>HomeScreen0</Text>
+      <Text>Bro {String(isFocused)} HomeScreen0</Text>
       <Button
         title="Go to About"
         onPress={() => props.navigation.navigate('Home1')}
@@ -24,9 +25,13 @@ function HomeScreen0(props) {
   );
 }
 function HomeScreen1(props) {
+  const isFocused = useIsFocused();
+  useEffect(() => {
+    console.log(isFocused);
+  }, [isFocused]);
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>HomeScreen1</Text>
+      <Text>Bro {String(isFocused)} HomeScreen1</Text>
       <Button
         title="Go to About"
         onPress={() => props.navigation.navigate('Home0')}
@@ -35,9 +40,13 @@ function HomeScreen1(props) {
   );
 }
 function HomeScreen3(props) {
+  const isFocused = useIsFocused();
+  useEffect(() => {
+    console.log(isFocused);
+  }, [isFocused]);
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>HomeScreen3</Text>
+      <Text>Bro {String(isFocused)} HomeScreen3</Text>
       <Button
         title="Go to About"
         onPress={() => props.navigation.navigate('Home2')}
@@ -46,9 +55,13 @@ function HomeScreen3(props) {
   );
 }
 function HomeScreen2(props) {
+  const isFocused = useIsFocused();
+  useEffect(() => {
+    console.log(isFocused);
+  }, [isFocused]);
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>HomeScreen2</Text>
+      <Text>Bro {String(isFocused)} HomeScreen2</Text>
       <Button
         title="Go to About"
         onPress={() => props.navigation.navigate('Home3')}
@@ -78,17 +91,25 @@ function Stacks() {
 }
 
 function HomeScreen() {
+  const isFocused = useIsFocused();
+  useEffect(() => {
+    console.log(isFocused);
+  }, [isFocused]);
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Home!</Text>
+      <Text>Bro {String(isFocused)} Home!</Text>
     </View>
   );
 }
 
 function SettingsScreen() {
+  const isFocused = useIsFocused();
+  useEffect(() => {
+    console.log(isFocused);
+  }, [isFocused]);
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Settings!</Text>
+      <Text>Bro {String(isFocused)} Settings!</Text>
     </View>
   );
 }
